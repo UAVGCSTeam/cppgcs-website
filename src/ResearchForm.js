@@ -1,11 +1,13 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography } from '@mui/material';
+import { Box, TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
 
 function ResearchForm() {
   const [formData, setFormData] = useState({
     name: '',
     email: '',
-    message: ''
+    message: '',
+    year: '',
+    otherText: ''
   });
   const [submitted, setSubmitted] = useState(false);
 
@@ -19,13 +21,10 @@ function ResearchForm() {
   const handleSubmit = async (e) => {
     e.preventDefault();
 
-    // TODO: Replace with your actual Google Form ID and entry IDs
     const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSf0qD3djMuQwOzSJWK_UV-HHD2k3KT0PEBVJG1iQhqAfmJgCQ/formResponse';
 
     const formDataEncoded = new FormData();
     formDataEncoded.append('entry.1717205639', formData.name);
-    // formDataEncoded.append('entry.YOUR_EMAIL_FIELD_ID', formData.email);
-    // formDataEncoded.append('entry.YOUR_MESSAGE_FIELD_ID', formData.message);
 
     try {
       await fetch(GOOGLE_FORM_ACTION, {
@@ -34,7 +33,7 @@ function ResearchForm() {
         mode: 'no-cors'
       });
       setSubmitted(true);
-      setFormData({ name: '', email: '', message: '' });
+      setFormData({ name: '', email: '', message: '', year: '', otherText: '' });
     } catch (error) {
       console.error('Error submitting form:', error);
     }
@@ -113,9 +112,9 @@ function ResearchForm() {
 
       <TextField
         fullWidth
-        // required
+        required
         name="email"
-        label="Email"
+        label="Preferred email"
         type="email"
         value={formData.email}
         onChange={handleChange}
@@ -173,6 +172,96 @@ function ResearchForm() {
           },
         }}
       />
+
+      <FormControl
+        component="fieldset"
+        margin="normal"
+        required
+        sx={{
+          mt: 3,
+          width: '100%'
+        }}
+      >
+        <FormLabel
+          component="legend"
+          sx={{
+            color: '#b0b0b0',
+            '&.Mui-focused': {
+              color: '#ffffff'
+            }
+          }}
+        >
+          Academic year
+        </FormLabel>
+        <RadioGroup
+          name="interest"
+          value={formData.interest}
+          onChange={handleChange}
+        >
+          <FormControlLabel
+            value="freshman"
+            control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
+            label="Freshman"
+            sx={{ color: '#ffffff' }}
+          />
+          <FormControlLabel
+            value="sophomore"
+            control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
+            label="Sophomore"
+            sx={{ color: '#ffffff' }}
+          />
+          <FormControlLabel
+            value="junior"
+            control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
+            label="Junior"
+            sx={{ color: '#ffffff' }}
+          />
+          <FormControlLabel
+            value="senior"
+            control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
+            label="Senior"
+            sx={{ color: '#ffffff' }}
+          />
+          <FormControlLabel
+            value="other"
+            control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
+            label="Other"
+            sx={{ color: '#ffffff' }}
+          />
+        </RadioGroup>
+        {formData.interest === 'other' && (
+          <TextField
+            fullWidth
+            required
+            name="otherText"
+            label="Please specify"
+            value={formData.otherText}
+            onChange={handleChange}
+            margin="normal"
+            sx={{
+              mt: 2,
+              '& .MuiOutlinedInput-root': {
+                color: '#ffffff',
+                '& fieldset': {
+                  borderColor: '#666666',
+                },
+                '&:hover fieldset': {
+                  borderColor: '#999999',
+                },
+                '&.Mui-focused fieldset': {
+                  borderColor: '#ffffff',
+                },
+              },
+              '& .MuiInputLabel-root': {
+                color: '#b0b0b0',
+              },
+              '& .MuiInputLabel-root.Mui-focused': {
+                color: '#ffffff',
+              },
+            }}
+          />
+        )}
+      </FormControl>
 
       <Button
         type="submit"
