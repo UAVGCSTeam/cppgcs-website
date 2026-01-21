@@ -118,7 +118,7 @@ function App() {
       >
         <Box sx={{ maxWidth: '900px', mx: 'auto', paddingTop: 8 }}>
           <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
-            We are ______, a research team on campus working under Dr. Bhandari and funded by Lockheed Martin. Our team is composed primarily of software and embedded systems engineers focused on building a ground control application and simulation service to support UAV teams on campus. We aid these teams in their missions by providing a multi-UAV-capable system with tools for planning, monitoring, and hosting coordinated multi-drone missions.
+            We are CPP Ground Control, a research team on campus working under Dr. Bhandari and funded by Lockheed Martin. Our team is composed primarily of software and embedded systems engineers focused on building a ground control application and simulation service to support UAV teams on campus. We aid these teams in their missions by providing a multi-UAV-capable system with tools for planning, monitoring, and hosting coordinated multi-drone missions.
           </Typography>
           <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
             Each semester, we present our progress and technical milestones to Lockheed Martin engineers. As a team, we operate under the Agile Scrum methodology, holding regular working sessions, sprint meetings, and performance reviews to simulate a real-world software engineering environment. Members are able to gain hands-on experience working on sponsor-backed projects, collaborating in Agile teams, and developing software used by real UAV systems.
