@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Alert } from '@mui/material';
+import { Box, TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Alert, IconButton } from '@mui/material';
+import { CloudUpload as CloudUploadIcon, Close as CloseIcon, InsertDriveFile as FileIcon } from '@mui/icons-material';
 import { supabase } from './supabaseClient';
 
 function ResearchForm() {
@@ -10,6 +11,7 @@ function ResearchForm() {
     year: '',
     otherText: ''
   });
+  const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
   const [error, setError] = useState(null);
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -21,18 +23,78 @@ function ResearchForm() {
     });
   };
 
+  const handleFileChange = (e) => {
+    const selectedFile = e.target.files[0];
+    if (selectedFile) {
+      // Validate file size (5MB limit)
+      const maxSize = 5 * 1024 * 1024; // 5MB in bytes
+      if (selectedFile.size > maxSize) {
+        setError('File size must be less than 5MB');
+        return;
+      }
+
+      // Validate file type (PDF only)
+      if (selectedFile.type !== 'application/pdf') {
+        setError('Only PDF files are allowed');
+        return;
+      }
+
+      setFile(selectedFile);
+      setError(null);
+    }
+  };
+
+  const handleRemoveFile = () => {
+    setFile(null);
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
     setError(null);
 
+    // Validate that a file is uploaded
+    if (!file) {
+      setError('Please upload your resume (PDF)');
+      setIsSubmitting(false);
+      return;
+    }
+
     try {
+      let resumeUrl = null;
+
+      // Upload file to Supabase Storage
+      if (file) {
+        const fileExt = file.name.split('.').pop();
+        const fileName = `${Date.now()}_${Math.random().toString(36).substring(2)}.${fileExt}`;
+        const filePath = `resumes/${fileName}`;
+
+        const { data: uploadData, error: uploadError } = await supabase.storage
+          .from('research-form-uploads')
+          .upload(filePath, file, {
+            cacheControl: '3600',
+            upsert: false
+          });
+
+        if (uploadError) {
+          throw new Error(`File upload failed: ${uploadError.message}`);
+        }
+
+        // Get public URL for the uploaded file
+        const { data: { publicUrl } } = supabase.storage
+          .from('research-form-uploads')
+          .getPublicUrl(filePath);
+
+        resumeUrl = publicUrl;
+      }
+
       // Prepare data for Supabase
       const submissionData = {
         name: formData.name,
         email: formData.email,
         message: formData.message || null,
         academic_year: formData.interest === 'other' ? formData.otherText : formData.interest,
+        resume_url: resumeUrl,
         created_at: new Date().toISOString()
       };
 
@@ -47,6 +109,7 @@ function ResearchForm() {
 
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '', year: '', otherText: '' });
+      setFile(null);
     } catch (error) {
       console.error('Error submitting form:', error);
       setError(error.message || 'Failed to submit form. Please try again.');
@@ -102,6 +165,70 @@ function ResearchForm() {
         </Alert>
       )}
 
+      {/* File Upload Section */}
+      <Box sx={{ mb: 3 }}>
+        <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 1 }}>
+          Resume/CV <span style={{ color: '#b0b0b0' }}>*</span>
+        </Typography>
+        <Button
+          variant="outlined"
+          required
+          component="label"
+          startIcon={<CloudUploadIcon />}
+          fullWidth
+          sx={{
+            borderColor: file ? '#4caf50' : '#666666',
+            color: '#ffffff',
+            py: 1.5,
+            justifyContent: 'center',
+            '&:hover': {
+              borderColor: file ? '#66bb6a' : '#999999',
+              backgroundColor: 'rgba(255, 255, 255, 0.05)'
+            }
+          }}
+        >
+          {file ? 'Change File' : '(PDF only)'}
+          <input
+            type="file"
+            hidden
+            accept=".pdf"
+            onChange={handleFileChange}
+          />
+        </Button>
+        {file && (
+          <Box
+            sx={{
+              mt: 2,
+              p: 2,
+              backgroundColor: 'rgba(255, 255, 255, 0.05)',
+              borderRadius: 1,
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'space-between'
+            }}
+          >
+            <Box sx={{ display: 'flex', alignItems: 'center', gap: 1 }}>
+              <FileIcon sx={{ color: '#b0b0b0' }} />
+              <Box>
+                <Typography variant="body2" sx={{ color: '#ffffff' }}>
+                  {file.name}
+                </Typography>
+                <Typography variant="caption" sx={{ color: '#b0b0b0' }}>
+                  {(file.size / 1024 / 1024).toFixed(2)} MB
+                </Typography>
+              </Box>
+            </Box>
+            <IconButton
+              size="small"
+              onClick={handleRemoveFile}
+              sx={{ color: '#b0b0b0', '&:hover': { color: '#ffffff' } }}
+            >
+              <CloseIcon />
+            </IconButton>
+          </Box>
+        )}
+      </Box>
+
       <TextField
         fullWidth
         required
@@ -136,7 +263,7 @@ function ResearchForm() {
         fullWidth
         required
         name="email"
-        label="Preferred email"
+        label="CPP email"
         type="email"
         value={formData.email}
         onChange={handleChange}
@@ -165,7 +292,7 @@ function ResearchForm() {
 
       <TextField
         fullWidth
-        // required
+        required
         name="message"
         label="Why do you want to join?"
         multiline

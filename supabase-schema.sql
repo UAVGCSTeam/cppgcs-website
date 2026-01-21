@@ -7,6 +7,7 @@ CREATE TABLE IF NOT EXISTS research_form_submissions (
   email TEXT NOT NULL,
   message TEXT,
   academic_year TEXT NOT NULL,
+  resume_url TEXT,
   created_at TIMESTAMPTZ DEFAULT NOW()
 );
 
