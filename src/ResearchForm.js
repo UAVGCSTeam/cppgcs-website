@@ -166,7 +166,7 @@ function ResearchForm() {
       )}
 
       {/* File Upload Section */}
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 1 }}>
         <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 1 }}>
           Resume/CV <span style={{ color: '#b0b0b0' }}>*</span>
         </Typography>
@@ -294,7 +294,7 @@ function ResearchForm() {
         fullWidth
         required
         name="message"
-        label="Why do you want to join?"
+        label="Why do you want to join? (around 20 words)"
         multiline
         rows={4}
         value={formData.message}
