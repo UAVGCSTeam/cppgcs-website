@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
-import { Box, TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio } from '@mui/material';
+import { Box, TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Alert } from '@mui/material';
+import { supabase } from './supabaseClient';
 
 function ResearchForm() {
   const [formData, setFormData] = useState({
@@ -10,6 +11,8 @@ function ResearchForm() {
     otherText: ''
   });
   const [submitted, setSubmitted] = useState(false);
+  const [error, setError] = useState(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleChange = (e) => {
     setFormData({
@@ -20,22 +23,35 @@ function ResearchForm() {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-
-    const GOOGLE_FORM_ACTION = 'https://docs.google.com/forms/d/e/1FAIpQLSf0qD3djMuQwOzSJWK_UV-HHD2k3KT0PEBVJG1iQhqAfmJgCQ/formResponse';
-
-    const formDataEncoded = new FormData();
-    formDataEncoded.append('entry.1717205639', formData.name);
+    setIsSubmitting(true);
+    setError(null);
 
     try {
-      await fetch(GOOGLE_FORM_ACTION, {
-        method: 'POST',
-        body: formDataEncoded,
-        mode: 'no-cors'
-      });
+      // Prepare data for Supabase
+      const submissionData = {
+        name: formData.name,
+        email: formData.email,
+        message: formData.message || null,
+        academic_year: formData.interest === 'other' ? formData.otherText : formData.interest,
+        created_at: new Date().toISOString()
+      };
+
+      // Insert data into Supabase
+      const { data, error: supabaseError } = await supabase
+        .from('research_form_submissions')
+        .insert([submissionData]);
+
+      if (supabaseError) {
+        throw supabaseError;
+      }
+
       setSubmitted(true);
       setFormData({ name: '', email: '', message: '', year: '', otherText: '' });
     } catch (error) {
       console.error('Error submitting form:', error);
+      setError(error.message || 'Failed to submit form. Please try again.');
+    } finally {
+      setIsSubmitting(false);
     }
   };
 
@@ -79,6 +95,12 @@ function ResearchForm() {
       <Typography variant="h4" sx={{ color: '#ffffff', mb: 4, textAlign: 'center', fontWeight: '' }}>
         Join Our Research Team
       </Typography>
+
+      {error && (
+        <Alert severity="error" sx={{ mb: 3 }}>
+          {error}
+        </Alert>
+      )}
 
       <TextField
         fullWidth
@@ -267,6 +289,7 @@ function ResearchForm() {
         type="submit"
         variant="contained"
         fullWidth
+        disabled={isSubmitting}
         sx={{
           mt: 3,
           py: 1.5,
@@ -277,9 +300,13 @@ function ResearchForm() {
           '&:hover': {
             backgroundColor: '#e0e0e0',
           },
+          '&:disabled': {
+            backgroundColor: '#666666',
+            color: '#999999',
+          },
         }}
       >
-        Submit
+        {isSubmitting ? 'Submitting...' : 'Submit'}
       </Button>
     </Box>
   );
