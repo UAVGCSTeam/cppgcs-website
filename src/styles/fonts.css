@@ -98,35 +98,4 @@
   font-display: swap;
 }
 
-@font-face {
-  font-family: 'Zalando Sans';
-  src: url('../assets/fonts/ZalandoSans-ExtraBold.ttf') format('truetype');
-  font-weight: 800;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zalando Sans';
-  src: url('../assets/fonts/ZalandoSans-ExtraBoldItalic.ttf') format('truetype');
-  font-weight: 800;
-  font-style: italic;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zalando Sans';
-  src: url('../assets/fonts/ZalandoSans-Black.ttf') format('truetype');
-  font-weight: 900;
-  font-style: normal;
-  font-display: swap;
-}
-
-@font-face {
-  font-family: 'Zalando Sans';
-  src: url('../assets/fonts/ZalandoSans-BlackItalic.ttf') format('truetype');
-  font-weight: 900;
-  font-style: italic;
-  font-display: swap;
-}
 
