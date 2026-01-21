@@ -15,7 +15,7 @@ function App() {
       {/* Header */}
       {/* <AppBar position="static" sx={{ backgroundColor: '#0a0a0a' }}> */}
       {/*   <Toolbar> */}
-      {/*     <Typography variant="h5" component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}> */}
+      {/*     <Typography variant="h6" component="div" sx={{ flexGrow: 1, fontWeight: 'bold' }}> */}
       {/*       Ground Control Station at Cal Poly Pomona */}
       {/*     </Typography> */}
       {/*   </Toolbar> */}
@@ -50,7 +50,7 @@ function App() {
             mb: 4,
           }}
         >
-          The Ground Control Station
+          Bee Control
         </Typography>
         <Typography
           variant="h3"
@@ -63,31 +63,31 @@ function App() {
             mb: 4,
           }}
         >
-          Cal Poly Pomona
+          Ground control station at Cal Poly Pomona
         </Typography>
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: '1.05rem',
-            lineHeight: 1.8,
-            maxWidth: '800px',
-            color: '#b0b0b0',
-          }}
-        >
-          We’re building a modern, user friendly, ground control station for UAV research teams at Cal Poly Pomona. We aim to enable fleet control over UAV’s, for use cases within agriculture, surveyance, and defense.
-        </Typography>
-
-        <Typography
-          variant="body1"
-          sx={{
-            fontSize: '1.05rem',
-            lineHeight: 1.8,
-            maxWidth: '800px',
-            color: '#b0b0b0',
-          }}
-        >
-          We operate using the industry standard agile framework, utilizing scrums and group meetings. The desktop application is supported by Qt's QML/C++ framework. Testing is done through ArduPilot and Gazebo simulations with connections through RF modules.
-        </Typography>
+        {/* <Typography */}
+        {/*   variant="body1" */}
+        {/*   sx={{ */}
+        {/*     fontSize: '1.05rem', */}
+        {/*     lineHeight: 1.8, */}
+        {/*     maxWidth: '800px', */}
+        {/*     color: '#b0b0b0', */}
+        {/*   }} */}
+        {/* > */}
+        {/*   We’re building a modern, user friendly, ground control station for UAV research teams at Cal Poly Pomona. We aim to enable fleet control over UAV’s, for use cases within agriculture, surveyance, and defense. */}
+        {/* </Typography> */}
+        {/**/}
+        {/* <Typography */}
+        {/*   variant="body1" */}
+        {/*   sx={{ */}
+        {/*     fontSize: '1.05rem', */}
+        {/*     lineHeight: 1.8, */}
+        {/*     maxWidth: '800px', */}
+        {/*     color: '#b0b0b0', */}
+        {/*   }} */}
+        {/* > */}
+        {/*   We operate using the industry standard agile framework, utilizing scrums and group meetings. The desktop application is supported by Qt's QML/C++ framework. Testing is done through ArduPilot and Gazebo simulations with connections through RF modules. */}
+        {/* </Typography> */}
         <Button
           variant="contained"
           onClick={scrollToResearch}
@@ -102,15 +102,65 @@ function App() {
             }
           }}
         >
-          Apply Now
+          Apply
         </Button>
       </Box>
 
-      {/* Research Section */}
+      {/* Qualifications Section */}
+      <Box
+        sx={{
+          minHeight: '20vh',
+          backgroundColor: '#1a1a1a',
+          color: '#e0e0e0',
+          py: 8,
+          px: 4
+        }}
+      >
+        <Box sx={{ maxWidth: '900px', mx: 'auto' }}>
+          {/* Job Qualifications */}
+          {/* <Typography variant="h4" sx={{ color: '#ffffff', mb: 4, fontWeight: 'bold' }}> */}
+          {/*   Position Overview */}
+          {/* </Typography> */}
+          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
+            {/* [Brief description of the research position and what team members will be working on] */}
+            We are ____, a research team on campus working under Dr. Bhandari and funded by Lockheed Martin. Our team consists of mostly software and emedded engineers focusing to build an application and simulation service to UAV teams on campus. We aid teams in their missions by providing a multi-uav capable system to
+          </Typography>
+          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
+            We are currently recruiting students for the upcoming 2026 spring and fall semester to join the following sub-divisions and also possess the following skills:
+          </Typography>
+
+          <Typography variant="h6" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'bold' }}>
+            Sub-Divisions
+          </Typography>
+          <Box component="ul" sx={{ color: '#b0b0b0', pl: 3, mb: 4 }}>
+            <li style={{ marginBottom: '0.5rem' }}>UI Design</li>
+            <li style={{ marginBottom: '0.5rem' }}>Backend</li>
+            <li style={{ marginBottom: '0.5rem' }}>Simulation Testing and Research</li>
+          </Box>
+
+          <Typography variant="h6" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'bold' }}>
+            Required Qualifications
+          </Typography>
+          <Box component="ul" sx={{ color: '#b0b0b0', pl: 3, mb: 4 }}>
+            <li style={{ marginBottom: '0.5rem' }}>Strong teamworking and communication skills</li>
+            <li style={{ marginBottom: '0.5rem' }}>Willingness to learn new tech stack and operational structures</li>
+            <li style={{ marginBottom: '0.5rem' }}>Able to commit around 10 hours a week to this project</li>
+            <li style={{ marginBottom: '0.5rem' }}>Experience with coding in C++ and Python (knowledge on ROS2 will be a plus)</li>
+          </Box>
+
+          <Typography variant="h6" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'bold' }}>
+            Desired Qualifications
+          </Typography>
+          <Box component="ul" sx={{ color: '#b0b0b0', pl: 3, mb: 4 }}>
+            <li style={{ marginBottom: '0.5rem' }}>Leadership</li>
+            <li style={{ marginBottom: '0.5rem' }}>Documentation and Unit Testing</li>
+          </Box>
+        </Box>
+      </Box>
       <Box
         ref={researchSectionRef}
         sx={{
-          // minHeight: '100vh',
+          minHeight: '20vh',
           backgroundColor: '#1a1a1a',
           color: '#e0e0e0',
           py: 8,
@@ -122,6 +172,7 @@ function App() {
       >
         <ResearchForm />
       </Box>
+
     </div>
   );
 }
