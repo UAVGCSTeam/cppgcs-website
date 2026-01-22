@@ -143,13 +143,13 @@ export default function ImageCarouselSection({
                     sx={{
                         flex: 1,
                         p: { xs: 1, md: 4 },
-                        height: { xs: "45vh", md: "50vh" },
+                        height: { xs: "400px", sm: "45vh", md: "50vh" }, // Fixed height on mobile
+                        minHeight: { xs: "400px", md: "45vh" }, // Ensure minimum height
                         display: "flex",
                         alignItems: "center",
                         justifyContent: "center",
                         position: "relative",
                         overflow: "hidden",
-                        // backgroundColor: "#111",
                         borderRadius: 1,
                     }}
                     onMouseEnter={handleMouseEnter}
@@ -168,27 +168,24 @@ export default function ImageCarouselSection({
                         sx={{
                             display: "flex",
                             width: `${total * 100}%`,
-                            height: { xs: "45vh", md: "50vh" },
+                            height: "100%",
                             maxHeight: "100%",
                             transform: `translateX(-${index * 100}%)`,
                             transition: "transform 450ms ease",
-                            // height: "100%",
                         }}
                     >
                         {normalizedImages.map((img, i) => (
                             <Box
                                 key={i}
                                 sx={{
-                                    // width: `${100}%`,
-                                    minWidth: "100%",
-                                    maxHeight: "100%",
+                                    minWidth: "100%", // Each slide takes full container width
+                                    width: "100%",
+                                    height: "100%",
                                     flexShrink: 0,
                                     display: "flex",
                                     alignItems: "center",
                                     justifyContent: "center",
-                                    objectFit: "contain",
-                                    // height: "100%",
-                                    // backgroundColor: "#111",
+                                    px: { xs: 2, md: 3 }, // Padding for breathing room
                                 }}
                                 aria-hidden={i !== index}
                             >
