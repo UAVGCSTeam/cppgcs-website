@@ -164,7 +164,7 @@ function ResearchForm() {
           width: "100%",
           height: "2px",
           mx: "auto",
-          background: "linear-gradient(to right, #0a0a0a, white, #0a0a0a)",
+          background: "linear-gradient(to right, #1B1A1B, #D9D9D9, #1B1A1B)",
         }}
       />
 
