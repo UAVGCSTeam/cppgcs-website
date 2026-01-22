@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Box, TextField, Button, Typography, FormControl, FormLabel, RadioGroup, FormControlLabel, Radio, Alert, IconButton } from '@mui/material';
 import { CloudUpload as CloudUploadIcon, Close as CloseIcon, InsertDriveFile as FileIcon } from '@mui/icons-material';
 import { supabase } from './supabaseClient';
+import DefenseButton from './DefenseButton';
 
 function ResearchForm() {
   const [formData, setFormData] = useState({
@@ -387,8 +388,14 @@ function ResearchForm() {
           />
         </RadioGroup>
       </FormControl>
-
-      <Button
+      <DefenseButton 
+        type="submit"
+        children={isSubmitting ? 'Submitting...' : 'Submit'}
+        variant='white'
+        fullWidth
+        disabled={isSubmitting}
+        />
+      {/* <Button
         type="submit"
         variant="contained"
         fullWidth
@@ -410,7 +417,7 @@ function ResearchForm() {
         }}
       >
         {isSubmitting ? 'Submitting...' : 'Submit'}
-      </Button>
+      </Button> */}
     </Box>
   );
 }

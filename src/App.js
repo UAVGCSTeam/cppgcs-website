@@ -1,12 +1,16 @@
 import React, { useRef } from 'react';
 import { AppBar, Toolbar, Typography, Box, Button } from '@mui/material';
 import ResearchForm from './ResearchForm';
+import DefenseButton from './DefenseButton';
 import './App.css';
 import ImageCarouselSection from "./ImageCarouselSection";
 import ScrollHint from './ScrollHint';
 import IconSection from './IconSection';
 import { useEffect, useState } from "react";
 
+
+
+// carousel images
 import img1 from './/assets/images/TeamImage.jpg';
 import img2 from './/assets/images/badparking.jpg';
 import img3 from './/assets/images/carlosFlight.jpg';
@@ -162,26 +166,12 @@ function App() {
         {/* > */}
         {/*   — Oscar Wilde */}
         {/* </Typography> */}
-        <Button
-          variant="contained"
-          onClick={scrollToResearch}
-          sx={{
-            backgroundColor: '#ffffff',
-            color: '#0a0a0a',
-            marginTop: '2.5rem',
-            marginBottom: '2.5rem',
-            fontWeight: 'bold',
-            width: '150px',
-            height: '45px',
-            fontSize: '1rem',
-            '&:hover': {
-              backgroundColor: '#e0e0e0'
-            }
-          }}
-        >
-          Apply now!
-        </Button>
-      </Box>
+    <DefenseButton 
+      children="Apply Now"
+      onClick={scrollToResearch}
+      variant='white'
+    />      
+    </Box>
       {atTop && (
         <ScrollHint imageSrc={scrollArrow}
           sx={{
