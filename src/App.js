@@ -14,6 +14,8 @@ import img4 from './/assets/images/flyingImage.jpg';
 import img5 from './/assets/images/TeamImage1.jpg';
 import img6 from './/assets/images/viewingJet.jpg';
 import img7 from './/assets/images/Peanuts.jpg';
+import img8 from './/assets/images/meganWhiteBoard.jpg';
+import img9 from './/assets/images/teamWorkLibrary.jpg';
 import scrollArrow from './assets/images/scrollArrow.png';
 
 // Tool Icon Images
@@ -33,6 +35,8 @@ const images = [
   { src: img6, alt: "Viewing Jet" },
   { src: img2, alt: "Bad Parking" },
   { src: img7, alt: "Peanuts" },
+  { src: img8, alt: "Megan White Board" },
+  { src: img9, alt: "Team Work Library" },
 ];
 const icons = [
   { src: cpp, alt: "C++" },
