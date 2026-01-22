@@ -104,7 +104,7 @@ function App() {
           justifyContent: 'center',
           alignItems: 'center',
           backgroundImage: 'url(/backgroundWithDrones.png)',
-          backgroundImage: 'url(/banner2-small.png)',
+          // backgroundImage: 'url(/banner2-small.png)',
           backgroundSize: 'cover',
           backgroundPosition: 'center',
           backgroundRepeat: 'no-repeat',
