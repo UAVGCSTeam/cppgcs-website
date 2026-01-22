@@ -279,6 +279,12 @@ function App() {
           <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'Semi Bold', fontSize: '2rem' }}>
             Team Member Description
           </Typography>
+          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
+            We are CPP Ground Control, a research team on campus working under Dr. Bhandari and funded by Lockheed Martin. Our team is composed primarily of software and embedded systems engineers focused on building a ground control application and simulation service to support UAV teams on campus. We aid these teams in their missions by providing a multi-UAV-capable system with tools for planning, monitoring, and hosting coordinated multi-drone missions.
+          </Typography>
+          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
+            Each semester, we present our progress and technical milestones to Lockheed Martin engineers. As a team, we operate under the Agile Scrum methodology, holding regular working sessions, sprint meetings, and performance reviews to simulate a real-world software engineering environment. Members are able to gain hands-on experience working on sponsor-backed projects, collaborating in Agile teams, and developing software used by real UAV systems.
+          </Typography>
 
           <Typography variant="body1" sx={{ color: '#CDCDCD', mt: 3, mb: 4, lineHeight: 1.8 }}>
             We welcome students from all academic years, offering roles that range from entry-level onboarding positions to leadership opportunities where members lead teams and work deeply within our core system architecture. This team is ideal for students interested in embedded systems, autonomy, and defense-related software.

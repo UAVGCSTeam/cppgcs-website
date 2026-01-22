@@ -9,7 +9,6 @@ function ResearchForm() {
     email: '',
     message: '',
     year: '',
-    otherText: ''
   });
   const [file, setFile] = useState(null);
   const [submitted, setSubmitted] = useState(false);
@@ -93,7 +92,7 @@ function ResearchForm() {
         name: formData.name,
         email: formData.email,
         message: formData.message || null,
-        academic_year: formData.interest === 'other' ? formData.otherText : formData.interest,
+        academic_year: formData.interest,
         resume_url: resumeUrl,
         created_at: new Date().toISOString()
       };
@@ -108,7 +107,7 @@ function ResearchForm() {
       }
 
       setSubmitted(true);
-      setFormData({ name: '', email: '', message: '', year: '', otherText: '' });
+      setFormData({ name: '', email: '', message: '', year: '' });
       setFile(null);
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -175,7 +174,7 @@ function ResearchForm() {
       )}
 
       {/* File Upload Section */}
-      <Box sx={{ mb: 3 }}>
+      <Box sx={{ mb: 1 }}>
         <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 1 }}>
           Resume/CV <span style={{ color: '#b0b0b0' }}>*</span>
         </Typography>
@@ -303,7 +302,7 @@ function ResearchForm() {
         fullWidth
         required
         name="message"
-        label="Why do you want to join?"
+        label="Why do you want to join? (around 20 words)"
         multiline
         rows={4}
         value={formData.message}
@@ -357,68 +356,36 @@ function ResearchForm() {
           onChange={handleChange}
         >
           <FormControlLabel
-            value="freshman"
+            value="1st year"
             control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
-            label="Freshman"
+            label="1st year"
             sx={{ color: '#ffffff' }}
           />
           <FormControlLabel
-            value="sophomore"
+            value="2nd year"
             control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
-            label="Sophomore"
+            label="2nd year"
             sx={{ color: '#ffffff' }}
           />
           <FormControlLabel
-            value="junior"
+            value="3rd year"
             control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
-            label="Junior"
+            label="3rd year"
             sx={{ color: '#ffffff' }}
           />
           <FormControlLabel
-            value="senior"
+            value="4th year"
             control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
-            label="Senior"
+            label="4th year"
             sx={{ color: '#ffffff' }}
           />
           <FormControlLabel
-            value="other"
+            value="5th year or higher"
             control={<Radio sx={{ color: '#b0b0b0', '&.Mui-checked': { color: '#ffffff' } }} />}
-            label="Other"
+            label="5th year or higher"
             sx={{ color: '#ffffff' }}
           />
         </RadioGroup>
-        {formData.interest === 'other' && (
-          <TextField
-            fullWidth
-            required
-            name="otherText"
-            label="Please specify"
-            value={formData.otherText}
-            onChange={handleChange}
-            margin="normal"
-            sx={{
-              mt: 2,
-              '& .MuiOutlinedInput-root': {
-                color: '#ffffff',
-                '& fieldset': {
-                  borderColor: '#666666',
-                },
-                '&:hover fieldset': {
-                  borderColor: '#999999',
-                },
-                '&.Mui-focused fieldset': {
-                  borderColor: '#ffffff',
-                },
-              },
-              '& .MuiInputLabel-root': {
-                color: '#b0b0b0',
-              },
-              '& .MuiInputLabel-root.Mui-focused': {
-                color: '#ffffff',
-              },
-            }}
-          />
-        )}
       </FormControl>
 
       <Button
