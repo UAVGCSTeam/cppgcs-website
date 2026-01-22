@@ -17,12 +17,12 @@ import img7 from './/assets/images/Peanuts.jpg';
 import scrollArrow from './assets/images/scrollArrow.png';
 
 // Tool Icon Images
-import cpp from './assets/brand-logos/cpp-icon.svg';
-import discord from './assets/brand-logos/discord-icon.svg';
-import github from './assets/brand-logos/github-white-icon.svg';
-import notion from './assets/brand-logos/notion-icon.svg';
-import figma from './assets/brand-logos/figma-icon.svg';
-import raspberrypi from './assets/brand-logos/raspberry-pi-icon.svg';
+import cpp from './assets/brand-logos/cppIcon.svg';
+import discord from './assets/brand-logos/discordIcon.svg';
+import github from './assets/brand-logos/github-whiteIcon.svg';
+import notion from './assets/brand-logos/notionIcon.svg';
+import figma from './assets/brand-logos/figmaIcon.svg';
+import raspberrypi from './assets/brand-logos/raspberryPiIcon.svg';
 
 
 const images = [
@@ -35,12 +35,12 @@ const images = [
   { src: img7, alt: "Peanuts" },
 ];
 const icons = [
-  // { src: cpp, alt: "C++" },
-  // { src: discord, alt: "Discord" },
-  // { src: github, alt: "GitHub" },
-  // { src: notion, alt: "Notion" },
-  // { src: figma, alt: "Figma" },
-  // { src: raspberrypi, alt: "Raspberry Pi" },
+  { src: cpp, alt: "C++" },
+  { src: discord, alt: "Discord" },
+  { src: github, alt: "GitHub" },
+  { src: notion, alt: "Notion" },
+  { src: figma, alt: "Figma" },
+  { src: raspberrypi, alt: "Raspberry Pi" },
 ];
 
 
