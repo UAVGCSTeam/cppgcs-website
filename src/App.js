@@ -26,6 +26,12 @@ import notion from './assets/brandLogos/notionIcon.svg?url';
 import figma from './assets/brandLogos/figmaIcon.svg?url';
 import raspberrypi from './assets/brandLogos/raspberryPiIcon.svg?url';
 import qt from './assets/brandLogos/qtIcon.svg?url';
+import xbee from './assets/brandLogos/xbee.jpg';
+import mavlink from './assets/brandLogos/mavlinkIcon.png';
+import gazeboIcon from './assets/brandLogos/gazeboIcon.png';
+import apIcon from './assets/brandLogos/apIcon.png';
+import pythonIcon from './assets/brandLogos/pythonIcon.svg?url';
+import qmlIcon from './assets/brandLogos/qmlIcon.png';
 
 const images = [
   { src: img1, alt: "Team Image" },
@@ -46,6 +52,12 @@ const icons = [
   { src: figma, alt: "Figma" },
   { src: raspberrypi, alt: "Raspberry Pi" },
   { src: qt, alt: "Qt" },
+  { src: xbee, alt: "XBee" },
+  { src: mavlink, alt: "MAVLink" },
+  { src: gazeboIcon, alt: "Gazebo" },
+  { src: apIcon, alt: "ArduPilot" },
+  { src: pythonIcon, alt: "Python" },
+  { src: qmlIcon, alt: "QML" },
 ];
 
 

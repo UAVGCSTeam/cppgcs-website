@@ -45,7 +45,8 @@ export default function IconRowsAndTextSection({
                         display: "flex",
                         flexDirection: "column",
                         gap: 2,                 // gap between rows
-                        alignItems: { xs: "center", md: "flex-start" },
+                        alignItems: { xs: "center", md: "center" },
+                        justifyContent: "center",
                     }}
                 >
                     {rows.map((row, rowIdx) => (
@@ -55,7 +56,7 @@ export default function IconRowsAndTextSection({
                                 display: "grid",
                                 gridTemplateColumns: `repeat(${row.length}, ${iconSize}px)`,
                                 gap: 8,            // spacing between icons
-                                justifyContent: { xs: "center", md: "start" },
+                                justifyContent: "center",
                             }}
                         >
                             {row.map((icon, i) => (
