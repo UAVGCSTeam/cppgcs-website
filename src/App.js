@@ -119,6 +119,7 @@ function App() {
           gutterBottom
           sx={{
             fontWeight: '500',
+            fontSize: { xs: '2rem', sm: '3rem' },
             color: '#ffffff',
             mb: 2,
           }}
@@ -130,7 +131,7 @@ function App() {
           component="h2"
           gutterBottom
           sx={{
-            fontSize: '2rem',
+            fontSize: { xs: '1.2rem', sm: '1.5rem'},
             fontWeight: '200',
             color: '#ffffff',
             mb: 6,
