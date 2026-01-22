@@ -102,7 +102,7 @@ export default function IconRowsAndTextSection({
           <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 1, fontWeight: 'Semi Bold', fontSize: '2rem' }}>
             {title}
           </Typography>
-          <Typography variant="body1" sx={{ color: '#b0b0b0', lineHeight: 1.8 }}>
+          <Typography variant="body1" sx={{ color: '#b0b0b0', lineHeight: 1.5 }}>
             {text}
           </Typography>
         </Box>

@@ -198,25 +198,6 @@ function App() {
             backgroundColor: '#0a0a0a',
           }}
         >
-          {/*Left box – text
-          <Box
-            sx={{
-              flex: 1,
-              padding: 4,
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'center',
-              color: '#ffffff',
-            }}
-          >
-            <Box sx={{ fontSize: '2rem', fontWeight: 600, mb: 2 }}>
-              Diving into the Team
-            </Box>
-            <Box sx={{ fontSize: '1rem', lineHeight: 1.6 }}>
-              We are all Cal Poly Students passionate about UAVs and software engineering! But mostly, are looking to get real world experiences, create memories, and have a great time. Join us to be a part of an amazing team and work on cutting-edge technology in the field of UAVs!
-            </Box>
-          </Box>}
-
           {/* Right box – image */}
           <Box
             sx={{
@@ -277,20 +258,20 @@ function App() {
           <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'Semi Bold', fontSize: '2rem' }}>
             Team Member Description
           </Typography>
-          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
+          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.5 }}>
             We are CPP Ground Control, a research team on campus working under Dr. Bhandari and funded by Lockheed Martin. Our team is composed primarily of software and embedded systems engineers focused on building a ground control application and simulation service to support UAV teams on campus. We aid these teams in their missions by providing a multi-UAV-capable system with tools for planning, monitoring, and hosting coordinated multi-drone missions.
           </Typography>
-          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.8 }}>
+          <Typography variant="body1" sx={{ color: '#b0b0b0', mb: 4, lineHeight: 1.5 }}>
             Each semester, we present our progress and technical milestones to Lockheed Martin engineers. As a team, we operate under the Agile Scrum methodology, holding regular working sessions, sprint meetings, and performance reviews to simulate a real-world software engineering environment. Members are able to gain hands-on experience working on sponsor-backed projects, collaborating in Agile teams, and developing software used by real UAV systems.
           </Typography>
 
-          <Typography variant="body1" sx={{ color: '#CDCDCD', mt: 3, mb: 4, lineHeight: 1.8 }}>
+          <Typography variant="body1" sx={{ color: '#CDCDCD', mt: 3, mb: 4, lineHeight: 1.5 }}>
             We welcome students from all academic years, offering roles that range from entry-level onboarding positions to leadership opportunities where members lead teams and work deeply within our core system architecture. This team is ideal for students interested in embedded systems, autonomy, and defense-related software.
           </Typography>
-          <Typography variant="body1" sx={{ color: '#CDCDCD', mb: 4, lineHeight: 1.8 }}>
+          <Typography variant="body1" sx={{ color: '#CDCDCD', mb: 4, lineHeight: 1.5 }}>
             Each semester, we present our progress and technical milestones to Lockheed Martin engineers. As a team, we operate under the Agile Scrum methodology, holding regular working sessions, sprint meetings, and performance reviews to simulate a real-world software engineering environment. Members are able to gain hands-on experience working on sponsor-backed projects, collaborating in Agile teams, and developing software used by real UAV systems.
           </Typography>
-          <Typography variant="body1" sx={{ color: '#CDCDCD', mb: 4, lineHeight: 1.8 }}>
+          <Typography variant="body1" sx={{ color: '#CDCDCD', mb: 4, lineHeight: 1.5 }}>
             We are currently recruiting students to join the following sub-divisions and also possess the following skills:
           </Typography>
 
@@ -298,27 +279,27 @@ function App() {
             Sub-Divisions
           </Typography>
           <Box component="ul" sx={{ color: '#CDCDCD', pl: 3, mb: 4 }}>
-            <li style={{ marginBottom: '0.5rem' }}>UI Design</li>
-            <li style={{ marginBottom: '0.5rem' }}>Backend</li>
-            <li style={{ marginBottom: '0.5rem' }}>Simulation Testing and Research</li>
+            <li style={{ marginBottom: '0.2rem' }}>UI Design</li>
+            <li style={{ marginBottom: '0.2rem' }}>Backend</li>
+            <li style={{ marginBottom: '0.2rem' }}>Simulation Testing and Research</li>
           </Box>
 
           <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'bold' }}>
             Required Qualifications
           </Typography>
           <Box component="ul" sx={{ color: '#CDCDCD', pl: 3, mb: 4 }}>
-            <li style={{ marginBottom: '0.5rem' }}>Strong teamworking and communication skills</li>
-            <li style={{ marginBottom: '0.5rem' }}>Willingness to learn new tech stack and operational structures</li>
-            <li style={{ marginBottom: '0.5rem' }}>Able to commit around 10 hours a week to this project</li>
-            <li style={{ marginBottom: '0.5rem' }}>Experience with coding in C++ and Python (knowledge on ROS2 will be a plus)</li>
+            <li style={{ marginBottom: '0.2rem' }}>Strong teamworking and communication skills</li>
+            <li style={{ marginBottom: '0.2rem' }}>Willingness to learn new tech stack and operational structures</li>
+            <li style={{ marginBottom: '0.2rem' }}>Able to commit around 10 hours a week to this project</li>
+            <li style={{ marginBottom: '0.2rem' }}>Experience with coding in C++ and Python (knowledge on ROS2 will be a plus)</li>
           </Box>
 
           <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'bold' }}>
             Desired Qualifications
           </Typography>
           <Box component="ul" sx={{ color: '#CDCDCD', pl: 3, mb: 4 }}>
-            <li style={{ marginBottom: '0.5rem' }}>Leadership</li>
-            <li style={{ marginBottom: '0.5rem' }}>Documentation and Unit Testing</li>
+            <li style={{ marginBottom: '0.2rem' }}>Leadership</li>
+            <li style={{ marginBottom: '0.2rem' }}>Documentation and Unit Testing</li>
           </Box>
         </Box>
       </Box>
