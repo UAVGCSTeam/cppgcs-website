@@ -17,12 +17,12 @@ import img7 from './/assets/images/Peanuts.jpg';
 import scrollArrow from './assets/images/scrollArrow.png';
 
 // Tool Icon Images
-import cpp from './assets/brand-logos/cppIcon.svg';
-import discord from './assets/brand-logos/discordIcon.svg';
-import github from './assets/brand-logos/github-whiteIcon.svg';
-import notion from './assets/brand-logos/notionIcon.svg';
-import figma from './assets/brand-logos/figmaIcon.svg';
-import raspberrypi from './assets/brand-logos/raspberryPiIcon.svg';
+import cpp from './assets/brandLogos/cppIcon.svg?url';
+import discord from './assets/brandLogos/discordIcon.svg?url';
+import github from './assets/brandLogos/githubWhiteIcon.svg?url';
+import notion from './assets/brandLogos/notionIcon.svg?url';
+import figma from './assets/brandLogos/figmaIcon.svg?url';
+import raspberrypi from './assets/brandLogos/raspberryPiIcon.svg?url';
 
 
 const images = [
