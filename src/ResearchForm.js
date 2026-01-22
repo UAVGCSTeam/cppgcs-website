@@ -394,30 +394,10 @@ function ResearchForm() {
         variant='white'
         fullWidth
         disabled={isSubmitting}
-        />
-      {/* <Button
-        type="submit"
-        variant="contained"
-        fullWidth
-        disabled={isSubmitting}
         sx={{
-          mt: 3,
-          py: 1.5,
-          backgroundColor: '#ffffff',
-          color: '#0a0a0a',
-          fontWeight: 'bold',
-          fontSize: '1rem',
-          '&:hover': {
-            backgroundColor: '#e0e0e0',
-          },
-          '&:disabled': {
-            backgroundColor: '#666666',
-            color: '#999999',
-          },
+          my: '1.2rem'
         }}
-      >
-        {isSubmitting ? 'Submitting...' : 'Submit'}
-      </Button> */}
+        />
     </Box>
   );
 }

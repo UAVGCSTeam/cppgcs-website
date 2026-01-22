@@ -29,8 +29,7 @@ export default function IconRowsAndTextSection({
         sx={{
           display: "flex",
           width: "100%",
-          gap: 4,
-          px: { xs: 2, md: 6 },
+          gap: 2,
           py: { xs: 3, md: 6 },
           color: "white",
           flexDirection: { xs: "column", md: "row" },
@@ -93,18 +92,17 @@ export default function IconRowsAndTextSection({
         <Box
           sx={{
             flex: 1,
+            px: { xs: 2, md: 13, l: 16},
             width: "100%",
             display: "flex",
             flexDirection: "column",
             justifyContent: "center",
-            gap: 2,
           }}
         >
-          <Typography variant="h4" component="h2" sx={{ mb: 1 }}>
+          <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 1, fontWeight: 'Semi Bold', fontSize: '2rem' }}>
             {title}
           </Typography>
-
-          <Typography variant="body1" color="#b0b0b0">
+          <Typography variant="body1" sx={{ color: '#b0b0b0', lineHeight: 1.8 }}>
             {text}
           </Typography>
         </Box>

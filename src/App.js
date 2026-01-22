@@ -273,7 +273,7 @@ function App() {
           px: 4
         }}
       >
-        <Box sx={{ maxWidth: '900px', mx: 'auto', paddingTop: 8 }}>
+        <Box sx={{ maxWidth: '900px', mx: 'auto', paddingTop: 6 }}>
           <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'Semi Bold', fontSize: '2rem' }}>
             Team Member Description
           </Typography>
