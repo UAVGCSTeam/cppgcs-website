@@ -25,7 +25,7 @@ import github from './assets/brandLogos/githubWhiteIcon.svg?url';
 import notion from './assets/brandLogos/notionIcon.svg?url';
 import figma from './assets/brandLogos/figmaIcon.svg?url';
 import raspberrypi from './assets/brandLogos/raspberryPiIcon.svg?url';
-
+import qt from './assets/brandLogos/qtIcon.svg?url';
 
 const images = [
   { src: img1, alt: "Team Image" },
@@ -45,6 +45,7 @@ const icons = [
   { src: notion, alt: "Notion" },
   { src: figma, alt: "Figma" },
   { src: raspberrypi, alt: "Raspberry Pi" },
+  { src: qt, alt: "Qt" },
 ];
 
 
