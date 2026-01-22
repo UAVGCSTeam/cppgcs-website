@@ -112,7 +112,6 @@ export default function ImageCarouselSection({
                     minHeight: height,
                     backgroundColor: "#0a0a0a",
                     color: "white",
-                    px: {xs: 2 },
                     gap: 2,
                     position: "relative",
                     overflow: "hidden",     // 👈 hides other slides
@@ -124,7 +123,7 @@ export default function ImageCarouselSection({
                 <Box
                     sx={{
                         flex: 1,
-                        px: { xs: 2, md: 13, l: 16},
+                        px: { xs: 4, md: 13, l: 16},
                         display: "flex",
                         flexDirection: "column",
                         justifyContent: "center",

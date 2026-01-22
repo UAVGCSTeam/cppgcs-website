@@ -92,7 +92,7 @@ export default function IconRowsAndTextSection({
         <Box
           sx={{
             flex: 1,
-            px: { xs: 2, md: 13, l: 16},
+            px: { xs: 4, md: 13, l: 16},
             width: "100%",
             display: "flex",
             flexDirection: "column",

@@ -230,7 +230,6 @@ function App() {
             minHeight: '40vh',
             alignItems: 'center',
             justifyContent: 'center',
-            padding: 4,
             backgroundColor: '#0a0a0a',
             paddingBottom: 10,
           }}>
