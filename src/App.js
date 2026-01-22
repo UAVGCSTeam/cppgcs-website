@@ -154,6 +154,9 @@ function App() {
             marginTop: '2.5rem',
             marginBottom: '2.5rem',
             fontWeight: 'bold',
+            width: '150px',
+            height: '45px',
+            fontSize: '1rem',
             '&:hover': {
               backgroundColor: '#e0e0e0'
             }
@@ -257,7 +260,7 @@ function App() {
         }}
       >
         <Box sx={{ maxWidth: '900px', mx: 'auto', paddingTop: 8 }}>
-          <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'bold', fontSize: '1.5rem' }}>
+          <Typography variant="h7" sx={{ color: '#ffffff', mt: 5, mb: 3, fontWeight: 'Semi Bold', fontSize: '2rem' }}>
             Team Member Description
           </Typography>
 

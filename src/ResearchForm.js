@@ -155,9 +155,18 @@ function ResearchForm() {
         p: 4
       }}
     >
-      <Typography variant="h4" sx={{ color: '#ffffff', mb: 4, textAlign: 'center', fontWeight: '' }}>
+      <Typography variant="h4" sx={{ color: '#ffffff', mb: 2, textAlign: 'center', fontWeight: '' }}>
         Join Our Research Team
       </Typography>
+      <Box
+        sx={{
+          mb: 4,
+          width: "100%",
+          height: "2px",
+          mx: "auto",
+          background: "linear-gradient(to right, #0a0a0a, white, #0a0a0a)",
+        }}
+      />
 
       {error && (
         <Alert severity="error" sx={{ mb: 3 }}>
@@ -233,7 +242,7 @@ function ResearchForm() {
         fullWidth
         required
         name="name"
-        label="Name"
+        label="Full Name"
         value={formData.name}
         onChange={handleChange}
         margin="normal"

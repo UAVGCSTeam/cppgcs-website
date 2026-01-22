@@ -26,9 +26,9 @@ export default function ScrollHint({ imageSrc, alt = "Scroll down", onClick, sx 
                     userSelect: "none",
                     animation: "scrollPulse 1.2s ease-in-out infinite",
                     "@keyframes scrollPulse": {
-                        "0%": { transform: "translateY(-2px) scale(1)", opacity: 0.4 },
-                        "50%": { transform: "translateY(6px) scale(1.15)", opacity: 1 },
-                        "100%": { transform: "translateY(-2px) scale(1)", opacity: 0.4 },
+                        "0%": { transform: "translateY(-6px) scale(1)", opacity: 0.4 },
+                        "50%": { transform: "translateY(4px) scale(1.15)", opacity: 1 },
+                        "100%": { transform: "translateY(-6px) scale(1)", opacity: 0.4 },
                     },
                     // Respect reduced motion preferences
                     "@media (prefers-reduced-motion: reduce)": {
@@ -37,7 +37,7 @@ export default function ScrollHint({ imageSrc, alt = "Scroll down", onClick, sx 
                     },
                 }}
             >
-                <img src={imageSrc} alt={alt} style={{ width: '30px', height: '30px' }} />
+                <img src={imageSrc} alt={alt} style={{ width: '40px', height: '40px' }} />
             </Box>
         </Box>
     );

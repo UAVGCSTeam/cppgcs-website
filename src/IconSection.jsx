@@ -96,11 +96,11 @@ export default function IconRowsAndTextSection({
                         gap: 2,
                     }}
                 >
-                    <Typography variant="h4" component="h2" sx={{ fontWeight: 600 }}>
+                    <Typography variant="h4" component="h2" sx={{ mb: 1 }}>
                         {title}
                     </Typography>
 
-                    <Typography variant="body1" sx={{ opacity: 0.9, lineHeight: 1.7 }}>
+                    <Typography variant="body1" color="#b0b0b0">
                         {text}
                     </Typography>
                 </Box>
