@@ -54,23 +54,26 @@ export default function IconRowsAndTextSection({
               key={rowIdx}
               sx={{
                 display: "grid",
-                gridTemplateColumns: `repeat(${row.length}, ${iconSize}px)`,
-                gap: 8,            // spacing between icons
-                justifyContent: "center",
+                gridTemplateColumns: `repeat(${row.length}, 1fr)`, // Changed from fixed px
+                gap: { xs: 2, sm: 4, md: 6 }, // Responsive gap instead of fixed 8
+                width: "100%",
+                maxWidth: { xs: "100%", sm: "400px", md: `${row.length * (iconSize + 48)}px` },
+                justifyItems: "center",
               }}
             >
               {row.map((icon, i) => (
                 <Box
-                  key={`${rowIdx}-${i}`}
                   component="img"
                   src={icon.src}
                   alt={icon.alt || `icon-${rowIdx}-${i}`}
                   loading="lazy"
                   sx={{
-                    width: iconSize,
-                    height: iconSize,
+                    width: { xs: "100%", sm: iconSize * 0.85, md: iconSize },
+                    height: { xs: "auto", sm: iconSize * 0.85, md: iconSize },
+                    maxWidth: { xs: "50px", sm: "60px", md: iconSize }, // Limit mobile size
                     objectFit: "contain",
                     opacity: 0.95,
+                    aspectRatio: "1/1",
                   }}
                 />
               ))}

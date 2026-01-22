@@ -201,6 +201,7 @@ function App() {
         <Box
           sx={{
             display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
             width: '100%',
             minHeight: '40vh',
             backgroundColor: '#0a0a0a',
@@ -230,9 +231,12 @@ function App() {
             sx={{
               flex: 1,
               display: 'flex',
+              flexDirection: { xs: 'column', md: 'row' },
+              width: '100%',
+              minHeight: '40vh',
               alignItems: 'center',
               justifyContent: 'center',
-              padding: 4,
+              backgroundColor: '#0a0a0a',
             }}
           >
             <ImageCarouselSection
@@ -249,6 +253,9 @@ function App() {
           sx={{
             flex: 1,
             display: 'flex',
+            flexDirection: { xs: 'column', md: 'row' },
+            width: '100%',
+            minHeight: '40vh',
             alignItems: 'center',
             justifyContent: 'center',
             padding: 4,
