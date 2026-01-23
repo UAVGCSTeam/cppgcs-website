@@ -100,7 +100,7 @@ function ResearchForm() {
 
       // Insert data into Supabase
       const { data, error: supabaseError } = await supabase
-        .from('research_form_submissions')
+        .from('test_adding_columns')
         .insert([submissionData]);
 
       if (supabaseError) {

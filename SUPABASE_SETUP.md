@@ -15,7 +15,7 @@ This guide will help you set up Supabase for the Research Form.
 2. Navigate to the SQL Editor (in the left sidebar)
 3. Copy the contents of `supabase-schema.sql`
 4. Paste it into the SQL Editor and run it
-5. This will create the `research_form_submissions` table with the proper schema and permissions
+5. This will create the `test_adding_columns` table with the proper schema and permissions
 
 ### 2. Get Your Supabase Credentials
 
@@ -54,7 +54,7 @@ You have several options to view form submissions:
 ### Option 1: Supabase Dashboard (Recommended for now)
 1. Go to your Supabase project
 2. Navigate to Table Editor
-3. Select `research_form_submissions` table
+3. Select `test_adding_columns` table
 4. You'll see all submissions with timestamps
 
 ### Option 2: Build an Admin View (Optional)
@@ -70,7 +70,7 @@ You can create an admin page in your React app to view submissions (requires aut
 
 ## Troubleshooting
 
-### "relation 'research_form_submissions' does not exist"
+### "relation 'test_adding_columns' does not exist"
 - Make sure you ran the SQL schema in your Supabase SQL Editor
 
 ### "Invalid API key"

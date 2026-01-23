@@ -70,10 +70,10 @@ USING (bucket_id = 'research-form-uploads');
 
 ### 3. Update Your Database Schema
 
-If you've already created the `research_form_submissions` table, you need to add the `resume_url` column:
+If you've already created the `test_adding_columns` table, you need to add the `resume_url` column:
 
 ```sql
-ALTER TABLE research_form_submissions 
+ALTER TABLE test_adding_columns 
 ADD COLUMN IF NOT EXISTS resume_url TEXT;
 ```
 
@@ -118,7 +118,7 @@ SELECT
   email, 
   resume_url,
   created_at 
-FROM research_form_submissions 
+FROM test_adding_columns 
 WHERE resume_url IS NOT NULL
 ORDER BY created_at DESC;
 ```
