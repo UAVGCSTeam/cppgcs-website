@@ -43,7 +43,7 @@ const images = [
   { src: img3, alt: "Carlos Flight" },
   { src: img4, alt: "Flying Image" },
   { src: img6, alt: "Viewing Jet" },
-  { src: img2, alt: "Bad Parking" },
+  // { src: img2, alt: "Bad Parking" },
   { src: img7, alt: "Peanuts" },
   { src: img8, alt: "Megan White Board" },
   { src: img9, alt: "Team Work Library" },
