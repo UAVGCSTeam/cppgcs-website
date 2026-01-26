@@ -1,5 +1,5 @@
 import React, { useRef } from 'react';
-import { AppBar, Toolbar, Typography, Box, Button } from '@mui/material';
+import { Typography, Box, Link } from '@mui/material';
 import ResearchForm from './ResearchForm';
 import DefenseButton from './DefenseButton';
 import './App.css';
@@ -315,7 +315,25 @@ function App() {
           justifyContent: 'center',
         }}
       >
-        <ResearchForm />
+        <Box
+          sx={{
+            // minHeight: 'em',
+            mt: '8em',
+            mb: '20em',
+          }}
+        >
+          <Typography>Thank you for your interest!</Typography>
+          <Typography>We've reached capacity for applications for now and will not be accepting new applications</Typography>
+          <Typography>
+            If you have any questions, please feel free to reach out to <Link
+              href="mailto:cppuavgcs@gmail.com"
+              sx={{ color: 'white', fontWeight: 'bold'}}
+              underline='hover'
+            >cppuavgcs@gmail.com
+            </Link>.
+          </Typography>
+        </Box>
+        {/* <ResearchForm /> */}
       </Box>
 
     </div>
