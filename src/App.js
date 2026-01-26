@@ -323,7 +323,7 @@ function App() {
           }}
         >
           <Typography>Thank you for your interest!</Typography>
-          <Typography>We've reached capacity for applications for now and will not be accepting new applications</Typography>
+          <Typography>We've reached capacity for applications for now and will not be accepting new applications.</Typography>
           <Typography>
             If you have any questions, please feel free to reach out to <Link
               href="mailto:cppuavgcs@gmail.com"
