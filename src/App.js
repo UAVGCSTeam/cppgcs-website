@@ -328,7 +328,7 @@ function App() {
             If you have any questions, please feel free to reach out to <Typography
               sx={{ color: 'white', fontWeight: 'bold'}}
               display='inline'
-            >cppuavgcs [at] gmail [dot] com
+            >cppuavgcs [at] gmail
             </Typography>.
           </Typography>
         </Box>
